@@ -1,3 +1,5 @@
+$theme-color: green
+
 ul
 	list-style: none
 	padding: 0
@@ -6,20 +8,23 @@ ul
 		margin-bottom: 10px
 		padding: 0.3em 0.4em
 		border-radius: 2.5em
-		background-color: lightblue
+		background-color: $theme-color
 		text-align: center
 		width: 90%
 		max-width: 350px
+		color: white
 	&#navlinks li
 		display: inline
 		margin-left: 10px
 		padding: 10px
 		&:hover
-			background-color: lightblue
+			background-color: $theme-color
 			border-radius: 5px
+			color: white
 	a
 		text-decoration: none
 		font-family: inherit
+		color: inherit
 		font-size: 1.5rem
 
 body

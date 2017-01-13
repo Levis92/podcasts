@@ -11,6 +11,14 @@ var data = {
 		{
 			name: 'Ctrl + Click Podcast',
 			link: 'http://ctrlclickcast.com/'
+		},
+		{
+			name: 'Start Here FM',
+			link: 'http://starthere.fm/'
+		},
+		{
+			name: 'Hello World Podcast',
+			link: 'https://wildermuth.com/hwpod'
 		}
 	]
 };
@@ -39,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 var clickLinkList = function() {
-	console.log('hej');
 	linkList.style.display = 'none';
 	addNavbar();
 
@@ -53,7 +60,7 @@ var addNavbar = function() {
 
 		link.href = podcast.link;
 		link.target = 'frame';
-		link.setAttribute('onclick', 'clickNavbar()');
+		link.onclick = 'clickNavbar()';
 
 		link.appendChild(text);
 		listItem.appendChild(link);

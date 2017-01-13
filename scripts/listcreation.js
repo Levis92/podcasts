@@ -19,6 +19,30 @@ var data = {
 		{
 			name: 'Hello World Podcast',
 			link: 'https://wildermuth.com/hwpod'
+		},
+		{
+			name: 'Away from the Keyboard',
+			link: 'http://awayfromthekeyboard.com/'
+		},
+		{
+			name: 'Simple Programmer',
+			link: 'https://simpleprogrammer.com/podcasts/'
+		},
+		{
+			name: 'Software Engineering Radio',
+			link: 'http://www.se-radio.net/'
+		},
+		{
+			name: '.Net Rocks',
+			link: 'http://www.dotnetrocks.com/'
+		},
+		{
+			name: 'HanselMinutes',
+			link: 'http://hanselminutes.com/'
+		},
+		{
+			name: ' Mixergy',
+			link: 'https://mixergy.com/'
 		}
 	]
 };

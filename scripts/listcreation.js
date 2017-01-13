@@ -49,10 +49,14 @@ var data = {
 
 var linkList;
 var navLinks;
+var frame;
+var toggleBox;
 
 document.addEventListener('DOMContentLoaded', function(){
 	linkList = document.getElementById('linklist');
 	navLinks = document.getElementById('navlinks');
+	frame = document.getElementById('frame');
+	toggleBox = document.getElementById('toggle-box');
 
 	data.podcasts.forEach(function(podcast) {
 		var listItem = document.createElement('li');
@@ -72,11 +76,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
 var clickLinkList = function() {
 	linkList.style.display = 'none';
+	frame.classList.add('frame');
 	addNavbar();
 
 }
 
 var addNavbar = function() {
+	toggleBox.style.display = 'block';
 	data.podcasts.forEach(function(podcast) {
 		var listItem = document.createElement('li');
 		var link = document.createElement('a');

@@ -3,14 +3,26 @@
 	<head>
 		<title>Podcasts</title>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- iOS Homescreen specials -->
+	  	<meta name="apple-mobile-web-app-title" content="NoteIT">
+	  	<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon.png" />
+
+	    <!-- Viewport setting -->
+	  	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+
 		<link rel="stylesheet" href="css/style.css">
+		<script src="https://use.fontawesome.com/da03a0462c.js"></script>
 	</head>
 	<body>
 		<header>
-			<div>
-				<h1>Podcasts</h1>
-			</div>
+			<h1>Podcasts</h1>
+			<label id="toggle-box" for="toggle">
+				<i class="fa fa-align-justify fa-2x" aria-hidden="true"></i>
+			</label>
+			<input type="checkbox" id="toggle" style="display: none;">
 			<nav>
 				<ul id="navlinks"></ul>
 			</nav>

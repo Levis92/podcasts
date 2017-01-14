@@ -1,4 +1,4 @@
-// Mobile Safari in standalone mode
+/* // Mobile Safari in standalone mode
 if(("standalone" in window.navigator) && window.navigator.standalone){
 
     // If you want to prevent remote links in standalone web apps opening Mobile Safari, change 'remotes' to true
@@ -20,4 +20,5 @@ if(("standalone" in window.navigator) && window.navigator.standalone){
         }
     
     },false);
-}
+} */
+

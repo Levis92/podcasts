@@ -19,7 +19,7 @@ ul {
     border-bottom: 1px solid lightgrey; }
     ul#navlinks li:last-child {
       border-bottom: 0 solid lightgrey; }
-    ul#navlinks li button:hover {
+    ul#navlinks li button:hover, ul#navlinks li button:active {
       color: lightgreen; }
   ul button {
     text-decoration: none;

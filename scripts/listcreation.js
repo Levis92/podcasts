@@ -58,6 +58,24 @@ document.addEventListener('DOMContentLoaded', function(){
 	frame = document.getElementById('frame');
 	toggleBox = document.getElementById('toggle-box');
 
+	addLinkList();
+	addNavbar();
+});
+
+var clickLinkList = function() {
+	linkList.style.display = 'none';
+	frame.classList.add('frame');
+	toggleBox.style.display = 'block';
+}
+
+var clickNavbar = function() {
+	var toggle = document.getElementById('toggle');
+	toggle.checked = false;
+	var nav = document.getElementsByTagName('nav')[0];
+	nav.style.display = 'none !important';
+}
+
+var addLinkList = function() {
 	data.podcasts.forEach(function(podcast) {
 		var listItem = document.createElement('li');
 		var link = document.createElement('a');
@@ -72,17 +90,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		linkList.appendChild(listItem);
 	});
-});
-
-var clickLinkList = function() {
-	linkList.style.display = 'none';
-	frame.classList.add('frame');
-	addNavbar();
-
 }
 
 var addNavbar = function() {
-	toggleBox.style.display = 'block';
 	data.podcasts.forEach(function(podcast) {
 		var listItem = document.createElement('li');
 		var link = document.createElement('a');
@@ -90,7 +100,7 @@ var addNavbar = function() {
 
 		link.href = podcast.link;
 		link.target = 'frame';
-		link.onclick = 'clickNavbar()';
+		link.setAttribute('onclick', 'clickNavbar()');
 
 		link.appendChild(text);
 		listItem.appendChild(link);

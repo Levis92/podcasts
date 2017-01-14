@@ -58,53 +58,47 @@ document.addEventListener('DOMContentLoaded', function(){
 	frame = document.getElementById('frame');
 	toggleBox = document.getElementById('toggle-box');
 
-	addLinkList();
-	addNavbar();
+	addLinkList(true);
+	addLinkList(false);
 });
 
-var clickLinkList = function() {
+var clickLinkList = function(event) {
 	linkList.style.display = 'none';
 	frame.classList.add('frame');
 	toggleBox.style.display = 'block';
+	changeIframe(event);
 }
 
-var clickNavbar = function() {
+var clickNavbar = function(event) {
 	var toggle = document.getElementById('toggle');
 	toggle.checked = false;
 	var nav = document.getElementsByTagName('nav')[0];
 	nav.style.display = 'none !important';
+	changeIframe(event);
 }
 
-var addLinkList = function() {
+var changeIframe = function(event) {
+	frame.src = event.target.attributes.value.textContent;
+}
+
+var addLinkList = function(condition) {
 	data.podcasts.forEach(function(podcast) {
 		var listItem = document.createElement('li');
-		var link = document.createElement('a');
+		var link = document.createElement('button');
 		var text = document.createTextNode(podcast.name);
 
-		link.href = podcast.link;
+		link.value = podcast.link;
 		link.target = 'frame';
-		link.setAttribute('onclick', 'clickLinkList()');
+		if (condition) {
+			link.setAttribute('onclick', 'clickLinkList(event)');
+		} else link.setAttribute('onclick', 'clickNavbar(event)');
 
 		link.appendChild(text);
 		listItem.appendChild(link);
 
-		linkList.appendChild(listItem);
+		if (condition) {
+			linkList.appendChild(listItem);
+		} else navLinks.appendChild(listItem);
 	});
 }
 
-var addNavbar = function() {
-	data.podcasts.forEach(function(podcast) {
-		var listItem = document.createElement('li');
-		var link = document.createElement('a');
-		var text = document.createTextNode(podcast.name);
-
-		link.href = podcast.link;
-		link.target = 'frame';
-		link.setAttribute('onclick', 'clickNavbar()');
-
-		link.appendChild(text);
-		listItem.appendChild(link);
-
-		navLinks.appendChild(listItem);
-	});
-}
